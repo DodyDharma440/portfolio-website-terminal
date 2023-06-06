@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+  src: url("./assets/SF-Mono-Powerline-Heavy.otf");
+}
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+  src: url("./assets/SF-Mono-Powerline-HeavyItalic.otf");
+}
+
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+  src: url("./assets/SF-Mono-Powerline-Bold.otf");
+}
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+  src: url("./assets/SF-Mono-Powerline-BoldItalic.otf");
+}
+
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url("./assets/SF-Mono-Powerline-Semibold.otf");
+}
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+  src: url("./assets/SF-Mono-Powerline-SemiboldItalic.otf");
+}
+
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src: url("./assets/SF-Mono-Powerline-Medium.otf");
+}
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+  src: url("./assets/SF-Mono-Powerline-MediumItalic.otf");
+}
+
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url("./assets/SF-Mono-Powerline-Regular.otf");
+}
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+  src: url("./assets/SF-Mono-Powerline-RegularItalic.otf");
+}
+
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url("./assets/SF-Mono-Powerline-Light.otf");
+}
+@font-face {
+  font-family: "SF Mono Powerline";
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  src: url("./assets/SF-Mono-Powerline-LightItalic.otf");
+}
