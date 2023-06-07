@@ -7,6 +7,8 @@ type InputFieldProps = {
   isEditable?: boolean;
   onSubmit?: () => void;
   isError?: boolean;
+  incrementHistory?: () => void;
+  decrementHistory?: () => void;
 };
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -15,6 +17,8 @@ const InputField: React.FC<InputFieldProps> = ({
   isEditable,
   onSubmit,
   isError,
+  incrementHistory,
+  decrementHistory,
 }) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [caretIndex, setCaretIndex] = useState(0);
@@ -77,6 +81,12 @@ const InputField: React.FC<InputFieldProps> = ({
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               onSubmit?.();
+            }
+            if (e.key === "ArrowUp") {
+              decrementHistory?.();
+            }
+            if (e.key === "ArrowDown") {
+              incrementHistory?.();
             }
           }}
         />
