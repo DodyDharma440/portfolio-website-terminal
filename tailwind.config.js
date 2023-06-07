@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "sf-mono": "'SF Mono Powerline'",
+        "sf-mono": "'SF Mono Powerline', ui-monospace, monospace",
       },
       keyframes: {
         blink: {

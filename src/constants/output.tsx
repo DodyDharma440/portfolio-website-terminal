@@ -7,22 +7,39 @@ export const help = (
     <HelpItem command="whoami" label="Display your public IP Address" />
     <HelpItem command="whois" label="Who is Dodi Aditya?" />
     <HelpItem command="social" label="Display social networks" />
-    <HelpItem command="experiences" label="Display work experiences" />
-    <HelpItem command="educations" label="Display my educations" />
+    <HelpItem command="exp" label="Display work experiences" />
+    <HelpItem command="edu" label="Display my educations" />
     <HelpItem command="skills" label="View some skills" />
     <HelpItem command="projects" label="Display projects" />
     <HelpItem command="mail" label="Mail to Dodi Aditya" />
     <HelpItem command="website" label="Open UI based my portfolio website" />
     <HelpItem command="open <url>" label="Open inputed url in new tab" />
     <HelpItem command="clear" label="Clear terminal" />
+    <HelpItem command="welcome" label="Display welcome ASCII text" />
+    <HelpItem
+      command={`echo "<text>"`}
+      label="Print the arguments to the screen"
+    />
+    <HelpItem command="history" label="Command history" />
     <HelpItem command="help" label="Display available commands" />
   </div>
 );
 
 export const experiences = (
   <div className="flex flex-col p-4 text-yellow-200">
-    <p>Frontend Developer - Dimedika - 2021 - Now</p>
-    <p>Frontend Developer - PT. Ganeshcom Mitra Solusi Digital - 2021 - Now</p>
+    <p>Frontend Developer / Dimedika / Oct 2021 - Now</p>
+    <p>
+      Frontend Developer / PT. Ganeshcom Mitra Solusi Digital / Aug 2021 - Now
+    </p>
+  </div>
+);
+
+export const educations = (
+  <div className="flex flex-col p-4 text-yellow-200">
+    <p>STMIK Primakara / Informatics Engineering / Sep 2022 - Now</p>
+    <p>
+      SMK N 1 Manggis / Computer and Network Engineering / Jul 2018 - Jun 2021
+    </p>
   </div>
 );
 
@@ -133,4 +150,40 @@ export const history = (data: string[]) => {
       ))}
     </div>
   );
+};
+
+export const welcome = (
+  <pre className="font-sf-mono px-4 pb-4">
+    {[
+      " __      __       ____            _ _             _ _ _               ",
+      "( _\\    /_ )     |  _ \\  ___   __| (_)   __ _  __| (_) |_ _   _  __ _ ",
+      " \\ _\\  /_ /      | | | |/ _ \\ / _` | |  / _` |/ _` | | __| | | |/ _` |",
+      "  \\ _\\/_ /_ _    | |_| | (_) | (_| | | | (_| | (_| | | |_| |_| | (_| |",
+      "  |_____/_/ /|   |____/ \\___/ \\__,_|_|  \\__,_|\\__,_|_|\\__|\\__, |\\__,_|",
+      "  (  (_)__)J-)                                            |___/       ",
+      "  (  /`.,   /    Welcome to my terminal website",
+      "   \\/  ;   /     Type 'help' for see available commands",
+      "    | === |",
+    ].map((i, idx) => {
+      return (
+        <React.Fragment key={idx}>
+          {i}
+          <br />
+        </React.Fragment>
+      );
+    })}
+  </pre>
+);
+
+export const echo = (text: string) => {
+  const [, data] = text.split('"');
+  return data;
+};
+
+export const openUrl = (args: string) => {
+  const url =
+    args.includes("https://") || args.includes("http://")
+      ? args
+      : `https://${args}`;
+  window.open(url);
 };

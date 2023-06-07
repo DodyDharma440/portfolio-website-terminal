@@ -4,21 +4,25 @@ import Header from "./components/Header";
 import InputField from "./components/InputField";
 import Command from "./components/Command";
 import {
+  echo,
+  educations,
   experiences,
   help,
   history,
+  openUrl,
   opening,
   profile,
   skills,
   socials,
+  welcome,
 } from "./constants/output";
 
 const App = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState<React.ReactNode[]>([
     `Last login: ${dayjs().format("ddd MMM D HH:mm:ss")} on ttys000`,
+    welcome,
   ]);
-  console.log("🚀 ~ file: App.tsx:21 ~ App ~ output:", output);
 
   const [userIp, setUserIp] = useState("Failed to get your IP address");
 
@@ -38,13 +42,13 @@ const App = () => {
   const [histories, setHistories] = useState<string[]>([]);
 
   const handleSubmit = () => {
-    const inputedData = <InputField input={input} />;
     const trimmedInput = input.replace(/(\r\n|\n|\r)/gm, "");
 
     const [command, args] = trimmedInput.split(" ");
 
     setOutput((prev) => {
       let data: React.ReactNode = "";
+      let isError = false;
 
       switch (command) {
         case "help":
@@ -68,8 +72,10 @@ const App = () => {
           break;
 
         case "open":
-          data = opening(args);
-          window.open(args);
+          if (args) {
+            data = opening(args);
+            openUrl(args);
+          }
           break;
 
         case "history":
@@ -86,24 +92,44 @@ const App = () => {
           window.open(`https://dodi-aditya.vercel.app`);
           break;
 
-        case "experiences":
+        case "exp":
           data = experiences;
+          break;
+
+        case "edu":
+          data = educations;
+          break;
+
+        case "welcome":
+          data = welcome;
+          break;
+
+        case "echo":
+          data = echo(trimmedInput);
           break;
 
         case "clear":
           return [];
 
         default:
+          isError = true;
           data = (
-            <span className="text-red-400">
-              Command not found: {trimmedInput}. For a list of commands, type{" "}
+            <div className="text-red-400 mb-1">
+              Command not found: {command}.{" "}
+              <span className="text-gray-100">
+                For a list of commands, type
+              </span>
               <Command className="pl-2">'help'</Command>
-            </span>
+            </div>
           );
           break;
       }
 
-      return [...prev, inputedData, data];
+      return [
+        ...prev,
+        <InputField input={trimmedInput} isError={isError} />,
+        data,
+      ];
     });
 
     setInput("");
@@ -111,12 +137,12 @@ const App = () => {
   };
 
   return (
-    <main className="font-sf-mono bg-black bg-opacity-90 min-h-screen w-screen text-white">
+    <main className="font-sf-mono bg-black bg-opacity-90 min-h-screen w-screen text-white font-m">
       <Header />
       <div className="px-4 pb-4 pt-10 text-sm">
         {output.map((o, index) => {
           return (
-            <div className="flex items-center mb-[2px]" key={index}>
+            <div className="mb-[2px]" key={index}>
               {o}
             </div>
           );
