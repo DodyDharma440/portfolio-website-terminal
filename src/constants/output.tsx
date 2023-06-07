@@ -162,7 +162,7 @@ export const welcome = (
       "  |_____/_/ /|   |____/ \\___/ \\__,_|_|  \\__,_|\\__,_|_|\\__|\\__, |\\__,_|",
       "  (  (_)__)J-)                                            |___/       ",
       "  (  /`.,   /    Welcome to my terminal website",
-      "   \\/  ;   /     Type 'help' for see available commands",
+      "   \\/  ;   /     Type 'help' to see available commands",
       "    | === |",
     ].map((i, idx) => {
       return (
