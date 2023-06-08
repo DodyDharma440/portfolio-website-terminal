@@ -8,7 +8,7 @@ const Header = () => {
       </div>
 
       <div>
-        <p className="text-xs">visitor@Dodis-MacBook-Air</p>
+        <p className="text-xs font-semibold">visitor@Dodis-MacBook-Air</p>
       </div>
 
       <div></div>

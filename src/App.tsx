@@ -83,6 +83,11 @@ const App = () => {
             data = skills;
             break;
 
+          case "projects":
+            data = opening("Lists of work projects");
+            openUrl("https://dodi-aditya.vercel.app/projects");
+            break;
+
           case "open":
             if (args) {
               data = opening(args);
@@ -159,7 +164,7 @@ const App = () => {
   }, [activeHistory, histories]);
 
   return (
-    <main className="font-sf-mono min-h-screen w-screen text-white font-m">
+    <main className="font-sf-mono min-h-screen w-screen text-white font-m overflow-x-auto min-w-[768px]">
       <Header />
       <div className="px-4 pb-4 pt-10 text-sm">
         {output.map((o, index) => {

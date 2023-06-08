@@ -10,7 +10,7 @@ export const help = (
     <HelpItem command="exp" label="Display work experiences" />
     <HelpItem command="edu" label="Display my educations" />
     <HelpItem command="skills" label="View some skills" />
-    <HelpItem command="projects" label="Display projects" />
+    <HelpItem command="projects" label="Display lists of my work projects" />
     <HelpItem command="mail" label="Mail to Dodi Aditya" />
     <HelpItem command="website" label="Open UI based my portfolio website" />
     <HelpItem command="open <url>" label="Open inputed url in new tab" />
