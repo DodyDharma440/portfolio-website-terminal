@@ -27,16 +27,21 @@ export const help = (
 
 export const experiences = (
   <div className="flex flex-col p-4 text-yellow-200">
-    <p>Frontend Developer / Dimedika / Oct 2021 - Now</p>
+    <p>Frontend Developer / Fulltime / The Digital Cellar / Nov 2023 - Now</p>
     <p>
-      Frontend Developer / PT. Ganeshcom Mitra Solusi Digital / Aug 2021 - Now
+      Frontend Developer / Freelance / PT. Ganeshcom Mitra Solusi Digital / Jul
+      2024 - Now
+    </p>
+    <p>
+      Frontend Developer / Fulltime / PT. Ganeshcom Mitra Solusi Digital / Aug
+      2021 - Jul 2024
     </p>
   </div>
 );
 
 export const educations = (
   <div className="flex flex-col p-4 text-yellow-200">
-    <p>STMIK Primakara / Informatics Engineering / Sep 2022 - Now</p>
+    <p>Primakara University / Informatics Engineering / Sep 2022 - Now</p>
     <p>
       SMK N 1 Manggis / Computer and Network Engineering / Jul 2018 - Jun 2021
     </p>
@@ -86,7 +91,7 @@ export const profile = (
   <div className="p-4 text-yellow-100">
     {[
       "Hello, my name is I Made Dodi Aditya Ari Dharma or you can call me Dodi",
-      "I was born on May 12, 2003, and now I'm still 20 years old.",
+      "I was born on May 12, 2003, and now I'm still 21 years old.",
       "Currently I work as a frontend developer and also a student majoring in informatics engineering.",
       "I am interested in exploring knowledge in the field of technology, especially in the field of web development.",
       "I have an honest personality, able to work in a team, and also always respect others.",
@@ -120,9 +125,14 @@ export const socials = (
       value="instagram/dodi.aditya_"
     />
     <SocialItem
+      label="tiktok"
+      url="https://www.tiktok.com/@dodi.aditya_"
+      value="tiktok/dodi.aditya_"
+    />
+    <SocialItem
       label="facebook"
       url="https://facebook.com/dodyaridharma"
-      value="instagram/dodyaridharma"
+      value="facebook/dodyaridharma"
     />
     <SocialItem
       label="twitter"
